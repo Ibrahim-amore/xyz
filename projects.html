@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | XYZ Inc.</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+header nav h1 {
+  display: inline;
+  font-size: 24px;
+}
+header nav ul {
+  list-style: none;
+  float: right;
+}
+header nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+/* Project Banner Styling */
+.project-banner {
+  position: relative; /* Allows positioning of overlay and text within the section */
+  background-image: url('./images/jan-vlacuha-Rns_A8bJ_dQ-unsplash.jpg'); /* Replace with actual image path */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the background image */
+  height: 400px; /* Sets height of the banner */
+  display: flex;
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  color: white; /* Makes the text white for contrast */
+  text-align: center;
+  overflow: hidden; /* Hides any overflow from the image */
+}
+
+/* Overlay Effect */
+.project-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+  z-index: 1; /* Places the overlay behind the text */
+}
+
+/* Text Styling */
+.banner-content {
+  position: relative; /* Ensures text appears above overlay */
+  z-index: 2; /* Positions text above overlay */
+  max-width: 800px; /* Optional: limits the width of text for readability */
+  padding: 0 20px; /* Adds padding for mobile view */
+}
+
+.banner-content h1 {
+  font-size: 48px; /* Large font size for heading */
+  margin: 0; /* Removes default margin */
+}
+
+.banner-content p {
+  font-size: 18px; /* Standard font size for paragraph */
+  margin-top: 10px; /* Adds spacing between heading and paragraph */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-banner {
+    height: 300px; /* Adjusts height for smaller screens */
+  }
+
+  .banner-content h1 {
+    font-size: 32px; /* Smaller heading font size */
+  }
+
+  .banner-content p {
+    font-size: 16px; /* Smaller paragraph font size */
+  }
+}
+
+
+/* Banners Section */
+.banners {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+.banner {
+  flex: 1 1 30%;
+  min-width: 200px;
+  background-color: #0eac1b;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.banner:hover {
+  transform: scale(1.05);
+}
+
+/* Projects List Section */
+.projects-list {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+.projects-list h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.project {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.project h3 {
+  font-size: 24px;
+  color: #0eac1b;
+  margin-bottom: 10px;
+}
+.project p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>XYZ Inc.</h1>
+    <div class="navbar">
+      <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="projects.html">Projects</a>
+        <a href="login.html">Login</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+  
+
+<section class="project-banner">
+  <div class="banner-content">
+    <h1>Our Project</h1>
+    <p>Discover our innovative approach and successful project outcomes.</p>
+  </div>
+</section>
+
+
+  <!-- Project Banners Section -->
+  <section class="banners">
+    <div class="banner">
+      <h3>Client Case Studies</h3>
+      <p>Discover how we've helped clients achieve their goals.</p>
+    </div>
+    <div class="banner">
+      <h3>Our Success Stories</h3>
+      <p>Read testimonials from our satisfied clients.</p>
+    </div>
+    <div class="banner">
+      <h3>Innovative Solutions</h3>
+      <p>Explore our unique approach to project management.</p>
+    </div>
+  </section>
+
+  <!-- Projects List Section -->
+  <section class="projects-list">
+    <h2>Our Projects</h2>
+    <div class="project">
+      <h3>Project Alpha</h3>
+      <p><strong>Description:</strong> A high-impact solution for a retail company to optimize supply chain management.</p>
+      <p><strong>Status:</strong> Completed</p>
+      <p><strong>Team Members:</strong> John Doe, Jane Smith, Emily Brown</p>
+    </div>
+    <div class="project">
+      <h3>Project Beta</h3>
+      <p><strong>Description:</strong> Developing a custom CRM system for enhanced customer interactions.</p>
+      <p><strong>Status:</strong> In Progress</p>
+      <p><strong>Team Members:</strong> Michael Johnson, Sarah Davis</p>
+    </div>
+    <div class="project">
+      <h3>Project Gamma</h3>
+      <p><strong>Description:</strong> Designing a digital solution for a finance company to improve transaction processing.</p>
+      <p><strong>Status:</strong> Not Started</p>
+      <p><strong>Team Members:</strong> Anna Lee, Robert Taylor</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 XYZ Inc. | Project Management Excellence</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+}
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | XYZ Inc.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+header nav h1 {
+  display: inline;
+  font-size: 24px;
+}
+header nav ul {
+  list-style: none;
+  float: right;
+}
+header nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  position: relative; /* Ensures that the pseudo-element is positioned correctly */
+  background-image: url('./images/img 1.jpg'); /* Your background image */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 500px;
+  text-align: center;
+  padding: 80px 20px;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Create the dark overlay */
+.hero::before {
+  content: ""; /* Empty content for the pseudo-element */
+  position: absolute; /* Position it absolutely within the .hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 1; /* Ensure it sits on top of the image */
+}
+
+/* Ensure text stays above the overlay */
+.hero h2, .hero p, .hero button{
+  position: relative;
+  z-index: 2; /* Make sure text appears above the overlay */
+  
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  justify-content: center;
+ margin-top: 120px;
+}
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+.hero button {
+  background-color: #0eac1b;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.mission-vision {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f4f4f4; /* Light background color */
+}
+
+.mission-vision h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Grid Layout for Content */
+.mission-vision .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-gap: 20px; /* Space between the image and text */
+  align-items: center; /* Vertically centers the items */
+  max-width: 1200px; /* Limits the width of the content */
+  margin: 0 auto; /* Centers the content */
+}
+
+.mission-vision .image-container img {
+  width: 100%; /* Makes the image responsive */
+  max-width: 500px; /* Limits the image width */
+  border-radius: 8px; /* Optional: adds rounded corners to the image */
+}
+
+.mission-vision .text-container {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333; /* Darker text for better readability */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .mission-vision .content {
+    grid-template-columns: 1fr; /* Stacks the image and text vertically */
+  }
+
+  .mission-vision h2 {
+    font-size: 30px; /* Adjusts heading size */
+  }
+  
+  .mission-vision .image-container img {
+    width: 100%; /* Makes sure the image takes full width */
+    margin-bottom: 20px; /* Adds space below the image when stacked */
+  }
+}
+
+
+/* Banners */
+.banners {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  background-color: #0eac1b;
+}
+.banner {
+  flex: 1 1 30%;
+  min-width: 200px;
+  background-color: 0eac1b;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.banner:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+</style>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>XYZ Inc.</h1>
+    <div class="navbar">
+      <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="projects.html">Projects</a>
+        <a href="login.html">Login</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+  
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Empowering Your Projects</h2>
+    <p>Leading the way in innovative project management solutions.</p>
+    <button onclick="scrollToContent()">Learn More</button>
+  </section>
+
+  <!-- Mission and Vision Section -->
+  <section class="mission-vision" id="content">
+    <h2>Our Mission & Vision</h2>
+    <div class="content">
+      <!-- Image on the left -->
+      <div class="image-container">
+        <img src="./images/nubelson-fernandes-jTpKCvH8A0E-unsplash.jpg" alt="Project Management Image">
+      </div>
+      <!-- Text on the right -->
+      <div class="text-container">
+        <p><strong>Mission:</strong> To provide unparalleled project management services that empower businesses worldwide.</p>
+        <p><strong>Vision:</strong> To become the leading project management firm with a reputation for delivering excellence.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Banners -->
+  <section class="banners">
+    <div class="banner">
+      <h3>Expert Project Management</h3>
+      <p>Our team of experts brings your projects to life with precision and dedication.</p>
+    </div>
+    <div class="banner">
+      <h3>Innovative Solutions</h3>
+      <p>Utilizing the latest tools and methodologies for successful project completion.</p>
+    </div>
+    <div class="banner">
+      <h3>Industry Achievements</h3>
+      <p>Award-winning services and case studies that showcase our commitment.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 XYZ Inc. | Project Management Excellence</p>
+  </footer>
+</body>
+<script>
+   function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+}
+
+
+</script>
+</html>
+
+
+ 

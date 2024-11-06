@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | XYZ Inc.</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Banners Styling */
+.banners {
+  display: flex;
+  gap: 10px;
+}
+
+.banner {
+  flex: 1;
+  background-color: #0eac1b;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Task Management Styling */
+.tasks form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#task-list {
+  margin-top: 20px;
+}
+
+.task-item {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Project Progress Section */
+.progress {
+  margin-top: 20px;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>XYZ Inc. Project Dashboard</h1>
+    <nav>
+      <a href="logout.php">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Banners Section -->
+  <section class="banners">
+    <div class="banner">Efficient Project Management Tools</div>
+    <div class="banner">Real-Time Project Tracking</div>
+  </section>
+
+  <!-- Task Management Section -->
+  <section class="tasks">
+    <h2>Manage Tasks</h2>
+    <form id="task-form">
+      <label for="task-name">Task Name:</label>
+      <input type="text" id="task-name" required>
+
+      <label for="assigned-to">Assign to:</label>
+      <input type="text" id="assigned-to" required>
+
+      <label for="status">Status:</label>
+      <select id="status">
+        <option value="Not Started">Not Started</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+
+      <button type="submit">Add Task</button>
+    </form>
+
+    <div id="task-list">
+      <!-- Tasks will display here dynamically -->
+    </div>
+  </section>
+
+  <!-- Progress Section -->
+  <section class="progress">
+    <h2>Project Progress</h2>
+    <div id="progress-chart">
+      <!-- Chart JS will render progress bars here -->
+    </div>
+  </section>
+
+  <script>
+    // Sample tasks array for demo purposes
+const tasks = [];
+
+// Handle task form submission
+document.getElementById('task-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Get form values
+  const taskName = document.getElementById('task-name').value;
+  const assignedTo = document.getElementById('assigned-to').value;
+  const status = document.getElementById('status').value;
+
+  // Add task to the array
+  tasks.push({ name: taskName, assignedTo, status });
+
+  // Reset the form
+  e.target.reset();
+
+  // Display the tasks
+  displayTasks();
+});
+
+// Function to display tasks
+function displayTasks() {
+  const taskList = document.getElementById('task-list');
+  taskList.innerHTML = '';
+
+  tasks.forEach((task, index) => {
+    const taskItem = document.createElement('div');
+    taskItem.className = 'task-item';
+    taskItem.innerHTML = `
+      <strong>${task.name}</strong> <br>
+      Assigned to: ${task.assignedTo} <br>
+      Status: ${task.status}
+    `;
+    taskList.appendChild(taskItem);
+  });
+}
+
+  </script>
+</body>
+</html>

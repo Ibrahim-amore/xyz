@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | XYZ Inc.</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+header nav h1 {
+  display: inline;
+  font-size: 24px;
+}
+header nav ul {
+  list-style: none;
+  float: right;
+}
+header nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* History Section */
+.history {
+  position: relative; /* Ensures that the text and overlay are positioned correctly */
+  background-image: url('./images/andreas-rasmussen-ZtD4DdClWGI-unsplash.jpg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the background image covers the entire section */
+  background-position: center; /* Centers the background image */
+  color: white; /* Makes the text color white to contrast with the background */
+  padding: 50px 20px; /* Adds padding around the section */
+  text-align: center; /* Centers the text */
+  height: 420px;
+}
+
+.history h2 {
+  font-size: 36px;
+  margin-top: 70px;
+
+}
+
+.history p {
+  font-size: 18px;
+  line-height: 1.6;
+ 
+}
+
+/* Overlay Effect */
+.history::before {
+  content: ""; /* Creates an empty element */
+  position: absolute; /* Positions the overlay relative to the section */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Darkens the background with a black overlay */
+  z-index: 1; /* Places the overlay beneath the text */
+}
+
+/* Ensures the text stays on top of the overlay */
+.history h2, .history p {
+  position: relative; /* Places the text above the overlay */
+  z-index: 2; /* Ensures text is above the overlay */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .history h2 {
+    font-size: 28px; /* Adjusts heading size for smaller screens */
+  }
+
+  .history p {
+    font-size: 16px; /* Adjusts text size for better readability on mobile */
+  }
+}
+
+
+/* Team Section */
+.team {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+.team h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.team-member {
+  flex: 1 1 30%;
+  min-width: 200px;
+  background-color: #0eac1b;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.team-member:hover {
+  transform: scale(1.05);
+}
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Values Section */
+.values {
+  position: relative; /* Ensures that the text and overlay are positioned correctly */
+  background-image: url('./images/unseen-studio-WvuTnXz1hSc-unsplash.jpg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the background image covers the entire section */
+  background-position: center; /* Centers the background image */
+  color: white; /* Makes the text color white to contrast with the background */
+  padding: 50px 20px; /* Adds padding around the section */
+  text-align: center; /* Centers the text */
+}
+
+.values h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.values p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Overlay Effect */
+.values::before {
+  content: ""; /* Creates an empty element */
+  position: absolute; /* Positions the overlay relative to the section */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Darkens the background with a black overlay */
+  z-index: 1; /* Places the overlay beneath the text */
+}
+
+/* Ensures the text stays on top of the overlay */
+.values h2, .values p {
+  position: relative; /* Places the text above the overlay */
+  z-index: 2; /* Ensures text is above the overlay */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .values h2 {
+    font-size: 28px; /* Adjusts heading size for smaller screens */
+  }
+
+  .values p {
+    font-size: 16px; /* Adjusts text size for better readability on mobile */
+  }
+}
+
+
+/* Banners */
+.banners {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+.banner {
+  flex: 1 1 30%;
+  min-width: 200px;
+  background-color: #0eac1b;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.banner:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>XYZ Inc.</h1>
+    <div class="navbar">
+      <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="projects.html">Projects</a>
+        <a href="login.html">Login</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+  
+  
+
+  <!-- Company History Section -->
+  <section class="history">
+    <h2>Our History</h2>
+    <p>Founded in 2010, XYZ Inc. has been at the forefront of innovative project management, helping businesses streamline their projects and achieve remarkable success. Our journey from a small startup to a recognized leader in the industry is marked by passion, dedication, and excellence.</p>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-members">
+      <div class="team-member">
+        <img src="./images/mina-rad-W002NEO2wds-unsplash.jpg" alt="Team Member 1">
+        <h3>John Doe</h3>
+        <p>CEO & Founder</p>
+      </div>
+      <div class="team-member">
+        <img src="./images/francis-odeyemi-jLKDfxikHzM-unsplash.jpg" alt="Team Member 2">
+        <h3>Jane Smith</h3>
+        <p>Chief Project Manager</p>
+      </div>
+      <div class="team-member">
+        <img src="./images/mina-rad-rdOe4qhSVsA-unsplash.jpg" alt="Team Member 3">
+        <h3>Emily Brown</h3>
+        <p>Operations Manager</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values">
+    <h2>Our Values</h2>
+    <p>At XYZ Inc., we prioritize integrity, innovation, and impact. Our values drive us to deliver exceptional project management solutions, fostering long-term relationships with our clients and creating value in everything we do.</p>
+  </section>
+
+  <!-- Milestones and Success Stories Banners -->
+  <section class="banners">
+    <div class="banner">
+      <h3>10+ Years of Excellence</h3>
+      <p>Celebrating over a decade of outstanding service in project management.</p>
+    </div>
+    <div class="banner">
+      <h3>500+ Projects Completed</h3>
+      <p>A proven track record of successful projects across various industries.</p>
+    </div>
+    <div class="banner">
+      <h3>Global Recognition</h3>
+      <p>Honored with industry awards for our innovative and impactful solutions.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 XYZ Inc. | Project Management Excellence</p>
+  </footer>
+
+  <script>function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+  }
+  </script>
+</body>
+</html>

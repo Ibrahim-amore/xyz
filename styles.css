@@ -1,0 +1,170 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  
+  header nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  .nav-links {
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack links vertically */
+    background-color: #333; /* Optional: match the header background color */
+    position: absolute;
+    top: 100%; /* Position below header */
+    width: 100%;
+  }
+  
+  .nav-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-links a:hover {
+    background-color: #444; /* Hover effect */
+  }
+  
+  
+  /* Responsive Media Queries */
+  
+  /* Large screens */
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+  }
+  
+  /* Tablet screens */
+  @media (max-width: 992px) {
+    .container {
+      padding: 0 15px;
+    }
+    .banner {
+      font-size: 1em;
+    }
+  }
+  
+  /* Small screens and mobile */
+  @media (max-width: 768px) {
+    /* Stack banners vertically */
+    .banners {
+      flex-direction: column;
+    }
+  
+    /* Stack task form elements vertically */
+    .tasks form {
+      flex-direction: column;
+    }
+  
+    .progress h2 {
+      font-size: 1.25em;
+    }
+  
+    /* Navbar Styles */
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #333;
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      left: 0;
+      padding: 20px 0;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  
+    /* Task List */
+    .task-item {
+      font-size: 0.9em;
+    }
+  }
+  
+  /* Extra Small screens (portrait mode) */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.25em;
+    }
+  }
+  /* Navbar Link Styles */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    position: relative; /* Ensures that the pseudo-element is positioned relative to the link */
+    display: inline-block; /* Makes the link an inline-block to adjust to text size */
+  }
+  
+  /* Adding the green line effect using ::before */
+  .navbar a::before {
+    content: "";               /* Creates an empty content element */
+    position: absolute;        /* Position it relative to the link */
+    width: 0;                  /* Initially set the width of the line to 0 */
+    height: 2px;               /* Set the height of the line */
+    background-color: green;   /* Green color for the line */
+    bottom: 0;                 /* Position the line at the bottom of the link */
+    left: 0;                   /* Ensure the line starts from the left */
+    transition: width 0.3s ease; /* Smooth transition effect */
+  }
+  
+  /* Hover effect to expand the line beneath the text */
+  .navbar a:hover::before {
+    width: 100%;               /* On hover, expand the line to match the width of the text */
+  }
+  
+  

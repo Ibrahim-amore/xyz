@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | XYZ Inc.</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Login Section */
+.login-section {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.login-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+.login-form label {
+  margin: 10px 0 5px;
+  color: #555;
+}
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.login-form button {
+  padding: 10px;
+  background-color: #0eac1b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.login-form button:hover {
+  background-color: #555;
+}
+.forgot-password {
+  margin-top: 10px;
+  color: #0eac1b;
+  text-decoration: none;
+}
+.forgot-password:hover {
+  text-decoration: underline;
+}
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+header nav h1 {
+  display: inline;
+  font-size: 24px;
+}
+header nav ul {
+  list-style: none;
+  float: right;
+}
+header nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+  </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>XYZ Inc.</h1>
+        <div class="navbar">
+          <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+          <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="projects.html">Projects</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html">Dashboard</a>
+          </nav>
+        </div>
+    </header>
+
+  <!-- Login Form Section -->
+  <section class="login-section">
+    <h2>Login to XYZ Inc.</h2>
+    <form action="login.php" method="POST" class="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Login</button>
+
+      <a href="forgot_password.html" class="forgot-password">Forgot Password?</a>
+    </form>
+  </section>
+
+</body>
+<script>
+    function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+}
+
+</script>
+</html>
